@@ -54,13 +54,13 @@ const slides = [
         description: "Un établissement engagé dans l'excellence, l'éducation et la formation de la jeunesse."
     },
     {
-        image: "school2.PNG",
+        image: "school2.png",
         subtitle: "L'EXCELLENCE SCOLAIRE",
         title: "Construisons ensemble votre avenir",
         description: "Nous accompagnons chaque élève dans son apprentissage et son développement."
     },
     {
-        image: "programmes2.PNG",
+        image: "programmes2.png",
         subtitle: "UN CADRE PROPICE À L'APPRENTISSAGE",
         title: "Apprendre dans un environnement adapté",
         description: "Un cadre éducatif qui encourage la discipline, le respect et la réussite."
