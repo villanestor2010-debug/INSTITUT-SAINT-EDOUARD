@@ -8,9 +8,43 @@
     <link rel="stylesheet" href="Niveau_D'etude.css">
 </head>
 <body>
-    <header>
-        <a href="index.html" class="Accueil">Accueil</a> > Niveau D'etude
+<header class="header">
+        <div class="identite">
+            <img src="Images/logo.ico" class="logo" alt="Logo">
+            <div class="identite-texte">
+                <h1>Institut Saint-Edouard</h1>
+                <p>
+                    Archidiocèse de Kinshasa
+                </p>
+                    <p>
+                        <strong>ECOLE CONVENTIONNEE CATHOLIQUE</strong>
+                    </p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="menu-btn" id="menuBtn"
+                aria-expanded="false" aria-controls="nav">
+                <span class="menu-icon">☰</span> MENU
+            </button>
+
+            <nav class="nav" id="nav">
+                <a href="index.html">Accueil</a>
+                <a href="Niveau_D'etude.html">Niveau D'étude</a>
+                <a href="Activite_Scolaire.html">Activité Scolaire</a>
+                <a href="inscription.html">Inscription</a>
+                <a href="Enseignant.html">Enseignant</a>
+                <a href="Galerie.html">Galerie</a>
+                <a href="contact.html">Contact</a>
+                <a href="A_propos.html">À propos</a>
+
+            </nav>
+        </div>
     </header>
+
+     <div class="retour">
+        <a href="index.html" class="Accueil">Accueil</a> > Niveau D'etude
+    </div>
     <main>
         <section class="intro">
         <h1>Niveau d'Étude</h1>
@@ -147,8 +181,26 @@
             </div>
         </section>
     </main>
-    <footer>
+<footer class="footer">
 
-    </footer>
+    <div class="footer-navigation">
+        <a href="index.html">Accueil</a>
+        <a href="Niveau_D'etude.html">Niveau D'étude</a>
+        <a href="Activite_Scolaire.html">Activité Scolaire</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="Enseignant.html">Enseignant</a>
+        <a href="Galerie.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+        <a href="A_propos.html">À propos</a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="footer-copy">
+        © 2026 <strong>Site Saint-Édouard</strong>.
+        Tous droits réservés.
+    </p>
+
+</footer>
 </body>
 </html>
