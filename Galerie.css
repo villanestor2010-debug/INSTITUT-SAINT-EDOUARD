@@ -267,3 +267,191 @@ section {
 .footer-copy strong {
     color: white;
 }
+
+
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVE DESIGN (IPHONE, ANDROID, TABLETTE, PC)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PETITS SMARTPHONES (iPhone SE, Android compacts - jusqu'à 480px)
+   -------------------------------------------------------------------------- */
+@media screen and max-width: 480px {
+    /* Ajustement de l'en-tête pour petits écrans */
+    .header {
+        flex-direction: column; /* Empile le logo et le menu verticalement */
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .identite {
+        flex-direction: column; /* Empile le logo au-dessus du texte */
+        gap: 5px;
+    }
+
+    .identite-texte h1 {
+        font-size: 18px; /* Réduit le titre pour éviter qu'il déborde */
+    }
+
+    /* Galerie photo : 1 seule colonne pour que les images restent bien lisibles */
+    .Catalogue {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    /* Alignement des images dans la page Niveau d'étude */
+    .Image {
+        flex-direction: column; /* Place les images les unes sous les autres */
+        align-items: center;
+    }
+
+    .Image img {
+        width: 100% !important; /* Force l'image à prendre toute la largeur disponible */
+        max-width: 280px;
+        height: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. SMARTPHONES STANDARDS ET GRANDS (iPhone 12/13/14/15, Galaxy S series - 481px à 768px)
+   -------------------------------------------------------------------------- */
+@media screen and min-width: 481px and max-width: 768px {
+    /* Affichage du bouton de menu mobile s'il est configuré en JS */
+    .menu-btn {
+        display: block; /* Affiche le bouton menu burger sur smartphone */
+    }
+
+    .nav {
+        flex-wrap: wrap; /* Permet aux liens du menu de passer à la ligne si nécessaire */
+        justify-content: center;
+    }
+
+    /* Galerie photo : 2 colonnes d'images sur les smartphones moyens/grands */
+    .Catalogue {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Images de la page Niveau d'étude sur 2 lignes si besoin */
+    .Image {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Image img {
+        width: 45% !important; /* Deux images par ligne */
+        height: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETTES (iPad, Galaxy Tab - 769px à 1024px)
+   -------------------------------------------------------------------------- */
+@media screen and min-width: 769px and max-width: 1024px {
+    .header {
+        padding: 10px 2%; /* Réduit légèrement les marges extérieures */
+    }
+
+    .nav a {
+        font-size: 11px; /* Réduit un peu la taille de la police des liens */
+        padding: 8px 6px;
+    }
+
+    /* Galerie photo : 3 colonnes d'images sur tablette */
+    .Catalogue {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Ajustement des images du niveau d'étude */
+    .Image img {
+        width: 220px !important; /* Taille intermédiaire adaptée à la tablette */
+        height: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. ÉCRANS PC ET GRANDS MONITEURS (À partir de 1025px)
+   -------------------------------------------------------------------------- */
+@media screen and min-width: 1025px {
+    /* Sur grand écran, la galerie bascule automatiquement sur 4 colonnes */
+    .Catalogue {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+/* =========================================================
+   AFFICHAGE DU MENU BURGER SUR TABLETTE ET MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* 1. Afficher le bouton MENU */
+    .menu-btn {
+        display: block !important;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        color: white;
+        border-radius: 35px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .menu-btn:hover {
+        background: #c51f2a;
+    }
+
+    .menu-icon {
+        margin-right: 5px;
+    }
+
+    /* 2. Transformer le menu en liste déroulante */
+    .navigation {
+        position: relative;
+    }
+
+    .nav {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        display: none; /* Masqué par défaut */
+        flex-direction: column;
+        align-items: stretch;
+        width: 230px;
+        max-height: 70vh;
+        overflow-y: auto;
+        background: rgba(13, 42, 66, 0.97);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        gap: 0;
+        z-index: 100;
+    }
+
+    /* 3. Classe activée par le JavaScript pour afficher le menu */
+    .nav.active {
+        display: flex !important;
+    }
+
+    .nav a {
+        display: block;
+        width: 100%;
+        padding: 14px 18px;
+        color: white;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0;
+    }
+
+    .nav a:hover {
+        background: #c51f2a;
+        transform: none;
+    }
+}
