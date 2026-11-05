@@ -570,7 +570,7 @@ img {
 ========================================================= */
 
 .mission-section {
-    background: rgba(226, 0, 0, 0.205);
+      background-color: #c51f2ad3;
 
     padding: 90px 6%;
 }
@@ -739,7 +739,7 @@ img {
 ========================================================= */
 
 .programmes-section {
-    background: white;
+        background: #497da5;
 
     padding: 90px 6%;
 }
@@ -757,7 +757,7 @@ img {
 
     align-items: center;
 
-    background: #f3f7fa;
+    background-color: #f9f9f977;
 
     padding: 45px;
 
