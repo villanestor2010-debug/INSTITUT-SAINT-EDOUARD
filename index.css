@@ -1,0 +1,1316 @@
+
+/* =========================================================
+   INSTITUT SAINT-ÉDOUARD
+   DESIGN PROFESSIONNEL
+   ROUGE - BLANC - BLEU CALME
+========================================================= */
+
+:root {
+    --rouge: #c51f2a;
+    --rouge-fonce: #94151d;
+
+    --bleu: #497da5;
+    --bleu-fonce: #174c7c;
+    --bleu-profond: #103654;
+    --bleu-clair: #eaf3fa;
+
+    --blanc: #ffffff;
+    --texte: #263b50;
+    --texte-secondaire: #718397;
+}
+
+/* =========================================================
+   1. RESET GÉNÉRAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+    background: var(--blanc);
+    color: var(--texte);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================================================
+   2. ACCUEIL ET IMAGE PLEIN ÉCRAN
+========================================================= */
+
+.accueil {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    background-image: url("fond.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+    transition: background-image 0.7s ease-in-out;
+}
+
+/* Voile sombre sur l'image */
+
+.fond-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        110deg,
+        rgba(5, 24, 43, 0.68),
+        rgba(15, 45, 70, 0.42),
+        rgba(80, 15, 25, 0.28)
+    );
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* =========================================================
+   3. EN-TÊTE
+========================================================= */
+
+.header {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 95px;
+
+    padding: 10px 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.22);
+
+    animation: apparitionHaut 0.9s ease;
+}
+
+/* =========================================================
+   4. IDENTITÉ ET LOGO
+========================================================= */
+
+.identite {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    flex-shrink: 0;
+
+    animation: apparitionGauche 1s ease;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    object-fit: cover;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.identite-texte h1 {
+    color: white;
+
+    font-size: 22px;
+    font-weight: 850;
+
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.identite-texte p {
+    color: white;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.identite-texte strong {
+    color: white;
+    font-size: 10px;
+}
+
+/* =========================================================
+   5. NAVIGATION ORDINATEUR
+========================================================= */
+
+.navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    animation: apparitionDroite 1s ease;
+}
+
+/* Bouton MENU caché sur PC */
+
+.menu-btn {
+    display: none;
+}
+
+/* Navigation horizontale */
+
+.nav {
+    position: static;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 3px;
+
+    min-width: auto;
+
+    background: transparent;
+    backdrop-filter: none;
+
+    border-radius: 0;
+    overflow: visible;
+}
+
+.nav a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   6. TEXTE PRINCIPAL DU DIAPORAMA
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    flex: 1;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 50px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: left;
+
+    color: white;
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Sous-titre masqué pour correspondre à l'exemple */
+
+.hero-content .sous-titre {
+    display: none;
+}
+
+/* Grand titre élégant */
+
+.hero-content h2 {
+    max-width: 950px;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 5.5vw, 68px);
+
+    font-weight: 400;
+    line-height: 1.15;
+
+    margin-bottom: 24px;
+
+    text-align: left;
+
+    text-shadow: 0 4px 15px rgba(0,0,0,0.65);
+
+    animation: titreApparition 1s ease both;
+}
+
+/* Description en majuscules */
+
+.hero-content p {
+    max-width: 780px;
+
+    color: white;
+
+    font-size: clamp(12px, 1.3vw, 15px);
+
+    font-weight: 800;
+
+    line-height: 1.7;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    padding-left: 39px;
+
+    margin: 0;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+
+    animation: descriptionApparition 1.2s ease both;
+}
+
+/* =========================================================
+   7. FLÈCHE ROUGE À CÔTÉ DE LA DESCRIPTION
+========================================================= */
+
+.btn-decouvrir {
+    position: absolute;
+
+    left: 20px;
+
+    top: 50%;
+    transform: translateY(15px);
+
+    width: 23px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: var(--rouge);
+
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    font-size: 0;
+
+    transition: 0.3s ease;
+
+    animation: flecheApparition 1.3s ease both;
+}
+
+.btn-decouvrir::after {
+    content: "›";
+
+    color: white;
+
+    font-size: 29px;
+    line-height: 1;
+}
+
+.btn-decouvrir:hover {
+    background: var(--rouge-fonce);
+
+    transform: translate(4px, 15px);
+}
+
+/* =========================================================
+   8. ANIMATIONS DU DIAPORAMA
+========================================================= */
+
+.hero-content.changing {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes titreApparition {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes descriptionApparition {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flecheApparition {
+    from {
+        opacity: 0;
+        transform: translate(-15px, 15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 15px);
+    }
+}
+
+@keyframes apparitionHaut {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes apparitionGauche {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes apparitionDroite {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================================================
+   9. COMMANDES DU DIAPORAMA
+========================================================= */
+
+.slider-controls {
+    position: absolute;
+
+    z-index: 8;
+
+    top: 55%;
+    left: 0;
+
+    width: 100%;
+
+    padding: 0 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+.slider-controls button {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    background: rgba(255,255,255,0.14);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    pointer-events: auto;
+
+    transition: 0.3s;
+}
+
+.slider-controls button:hover {
+    background: var(--rouge);
+    border-color: var(--rouge);
+
+    transform: scale(1.1);
+}
+
+/* Indicateurs du diaporama */
+
+.slider-indicators {
+    position: absolute;
+
+    z-index: 8;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+}
+
+.slider-indicators span {
+    width: 25px;
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.5);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider-indicators span.active {
+    width: 40px;
+    background: white;
+}
+
+/* =========================================================
+   10. SECTION TITRES
+========================================================= */
+
+.section-heading {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 50px;
+
+    padding: 0 15px;
+}
+
+.section-heading span {
+    color: var(--rouge);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    color: var(--bleu-profond);
+
+    font-size: clamp(30px, 4vw, 43px);
+
+    margin: 15px 0;
+
+    font-weight: 900;
+}
+
+.section-heading p {
+    color: var(--texte-secondaire);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   11. NOTRE MISSION
+========================================================= */
+
+.mission-section {
+    background: white;
+
+    padding: 90px 6%;
+}
+
+.mission-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.mission-card {
+    background: #f5f8fb;
+
+    padding: 35px 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    border-bottom: 4px solid var(--rouge);
+
+    transition: 0.35s;
+}
+
+.mission-card:nth-child(2) {
+    border-bottom-color: white;
+}
+
+.mission-card:nth-child(3) {
+    border-bottom-color: var(--bleu);
+}
+
+.mission-card:hover {
+    transform: translateY(-9px);
+
+    box-shadow: 0 15px 35px rgba(16,54,84,0.12);
+}
+
+.mission-icon {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.mission-card h3 {
+    color: var(--bleu-profond);
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+.mission-card p {
+    color: var(--texte-secondaire);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   12. ACTUALITÉS
+========================================================= */
+
+.actualites-section {
+    background: #f3f7fa;
+
+    padding: 90px 6%;
+}
+
+.actualites-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.actualite-card {
+    background: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(16,54,84,0.07);
+
+    transition: 0.35s;
+}
+
+.actualite-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(16,54,84,0.13);
+}
+
+.actualite-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+.actualite-card:hover img {
+    transform: scale(1.04);
+}
+
+.actualite-content {
+    padding: 25px;
+}
+
+.actualite-date {
+    color: var(--rouge);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.actualite-content h3 {
+    color: var(--bleu-profond);
+
+    font-size: 20px;
+
+    margin: 15px 0;
+}
+
+.actualite-content p {
+    color: var(--texte-secondaire);
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.actualite-content a {
+    color: var(--rouge);
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.actualite-content a:hover {
+    color: var(--bleu-profond);
+}
+
+/* =========================================================
+   13. PROGRAMMES
+========================================================= */
+
+.programmes-section {
+    background: white;
+
+    padding: 90px 6%;
+}
+
+.programmes-content {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    background: #f3f7fa;
+
+    padding: 45px;
+
+    border-radius: 20px;
+}
+
+.programmes-text > span {
+    color: var(--rouge);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.programmes-text h2 {
+    color: var(--bleu-profond);
+
+    font-size: clamp(30px, 4vw, 42px);
+
+    font-weight: 900;
+
+    margin: 20px 0;
+}
+
+.programmes-text p {
+    color: var(--texte-secondaire);
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+.btn-programmes {
+    display: inline-block;
+
+    background: var(--rouge);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    border-radius: 40px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn-programmes:hover {
+    background: var(--bleu-profond);
+
+    transform: translateY(-4px);
+}
+
+.programmes-image img {
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+/* =========================================================
+   14. PIED DE PAGE
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    min-height: 160px;
+
+    background: var(--bleu-profond);
+
+    color: white;
+
+    padding: 35px 20px 25px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 5;
+
+    border-top: 3px solid var(--rouge);
+}
+
+/* Navigation du pied de page */
+
+.footer-navigation {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px 25px;
+
+    margin-bottom: 25px;
+}
+
+.footer-navigation a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.footer-navigation a:hover {
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* Ligne de séparation */
+
+.footer-divider {
+    width: 85%;
+    max-width: 900px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+
+    margin: 0 auto 20px;
+}
+
+/* Copyright */
+
+.footer-copy {
+    color: #dce8f1;
+
+    font-size: 14px;
+
+    margin: 0;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-copy strong {
+    color: white;
+}
+
+/* =========================================================
+   15. TABLETTES
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 10px 3%;
+    }
+
+    .nav a {
+        padding: 10px 7px;
+        font-size: 11px;
+    }
+
+    .identite-texte h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .mission-container,
+    .actualites-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .programmes-content {
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+/* =========================================================
+   16. TÉLÉPHONES ET TABLETTES EN MODE MENU
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* En-tête */
+
+    .header {
+        min-height: 78px;
+
+        padding: 8px 3%;
+
+        gap: 10px;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .identite {
+        gap: 9px;
+    }
+
+    .identite-texte h1 {
+        font-size: 16px;
+    }
+
+    .identite-texte p {
+        font-size: 9px;
+    }
+
+    .identite-texte strong {
+        font-size: 8px;
+    }
+
+    /* Bouton MENU */
+
+    .menu-btn {
+        display: block;
+
+        padding: 10px 14px;
+
+        background: rgba(255,255,255,0.12);
+
+        backdrop-filter: blur(15px);
+
+        border: 1px solid rgba(255,255,255,0.55);
+
+        color: white;
+
+        border-radius: 35px;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .menu-btn:hover {
+        background: var(--rouge);
+    }
+
+    .menu-icon {
+        margin-right: 5px;
+    }
+
+    /* Menu déroulant */
+
+    .navigation {
+        position: relative;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: calc(100% + 12px);
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 230px;
+
+        max-height: 70vh;
+        overflow-y: auto;
+
+        background: rgba(13,42,66,0.97);
+
+        backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255,255,255,0.2);
+
+        border-radius: 15px;
+
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+
+        gap: 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 18px;
+
+        color: white;
+
+        font-size: 13px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+
+        border-radius: 0;
+    }
+
+    .nav a:hover {
+        background: var(--rouge);
+        transform: none;
+    }
+
+    /* Diaporama */
+
+    .hero-content {
+        width: 94%;
+        padding: 40px 12px;
+    }
+
+    .hero-content h2 {
+        font-size: 39px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+        letter-spacing: 1.8px;
+        line-height: 1.8;
+        padding-left: 35px;
+    }
+
+    .btn-decouvrir {
+        left: 12px;
+        width: 21px;
+        height: 50px;
+    }
+
+    /* Contrôles du diaporama */
+
+    .slider-controls {
+        padding: 0 12px;
+    }
+
+    .slider-controls button {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .slider-indicators {
+        bottom: 15px;
+    }
+
+    /* Programmes */
+
+    .programmes-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+}
+
+/* =========================================================
+   17. PETITS TÉLÉPHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .header {
+        min-height: 68px;
+        padding: 7px 10px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .identite {
+        gap: 7px;
+    }
+
+    .identite-texte h1 {
+        font-size: 11px;
+    }
+
+    .identite-texte p {
+        font-size: 8px;
+    }
+
+    .identite-texte strong {
+        font-size: 7px;
+    }
+
+    .menu-btn {
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+    .menu-icon {
+        font-size: 15px;
+    }
+
+    .nav {
+        width: 210px;
+    }
+
+    /* Textes du diaporama */
+
+    .hero-content {
+        width: 96%;
+        padding: 30px 8px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+        line-height: 1.8;
+        padding-left: 31px;
+    }
+
+    .btn-decouvrir {
+        left: 8px;
+        width: 19px;
+        height: 45px;
+    }
+
+    /* Sections */
+
+    .mission-section,
+    .actualites-section,
+    .programmes-section {
+        padding: 60px 18px;
+    }
+
+    .mission-container,
+    .actualites-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card {
+        padding: 30px 20px;
+    }
+
+    .actualite-card img {
+        height: 200px;
+    }
+
+    .programmes-content {
+        padding: 22px;
+        gap: 25px;
+    }
+
+    .programmes-image img {
+        height: 220px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    /* Pied de page */
+
+    .footer {
+        padding: 30px 15px 22px;
+    }
+
+    .footer-navigation {
+        gap: 15px 18px;
+    }
+
+    .footer-navigation a {
+        font-size: 12px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+/* =========================================================
+   18. TRÈS PETITS ÉCRANS
+========================================================= */
+
+@media (max-width: 340px) {
+
+    .logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .identite-texte h1 {
+        font-size: 9px;
+    }
+
+    .identite-texte p {
+        font-size: 7px;
+    }
+
+    .identite-texte strong {
+        font-size: 6px;
+    }
+
+    .menu-btn {
+        padding: 8px;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
+
+/* =========================================================
+   19. ACCESSIBILITÉ
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* SUPPRIMER LA PETITE FLÈCHE ROUGE */
+
+.btn-decouvrir {
+    display: none !important;
+}
+
+.btn-decouvrir::after {
+    display: none !important;
+    content: none !important;
+}
