@@ -16,7 +16,7 @@
 
     --blanc: #ffffff;
     --texte: #263b50;
-    --texte-secondaire: #364557;
+    --texte-secondaire: #718397;
 }
 
 /* =========================================================
@@ -89,7 +89,7 @@ img {
 ========================================================= */
 
 .header {
-    position: absolute;
+    position: relative;
     z-index: 10;
 
     width: 100%;
@@ -103,7 +103,7 @@ img {
 
     gap: 20px;
 
-    background: rgba(255, 255, 255, 0.19);
+    background: rgba(255, 255, 255, 0.07);
     border-bottom: 1px solid rgba(255,255,255,0.22);
 
     animation: apparitionHaut 0.9s ease;
@@ -127,12 +127,17 @@ img {
     width: 65px;
     height: 65px;
 
+    border-radius: 50%;
+    border: 2px solid white;
+
     object-fit: cover;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
 
 .identite-texte h1 {
-    display: inline-block;
     color: white;
+
     font-size: 22px;
     font-weight: 850;
 
@@ -570,7 +575,7 @@ img {
 ========================================================= */
 
 .mission-section {
-      background-color: #c51f2ad3;
+    background: white;
 
     padding: 90px 6%;
 }
@@ -580,8 +585,9 @@ img {
 
     margin: auto;
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
 }
@@ -595,14 +601,13 @@ img {
 
     text-align: center;
 
-    border-bottom: 4px solid var(--bleu);
+    border-bottom: 4px solid var(--rouge);
 
     transition: 0.35s;
 }
 
 .mission-card:nth-child(2) {
     border-bottom-color: white;
-    border-bottom-color: var(--bleu);
 }
 
 .mission-card:nth-child(3) {
@@ -641,7 +646,8 @@ img {
 ========================================================= */
 
 .actualites-section {
-    background: var(--bleu);
+    background: #f3f7fa;
+
     padding: 90px 6%;
 }
 
@@ -739,7 +745,7 @@ img {
 ========================================================= */
 
 .programmes-section {
-        background: #497da5;
+    background: white;
 
     padding: 90px 6%;
 }
@@ -757,7 +763,7 @@ img {
 
     align-items: center;
 
-    background-color: #f9f9f977;
+    background: #f3f7fa;
 
     padding: 45px;
 

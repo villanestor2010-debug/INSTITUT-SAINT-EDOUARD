@@ -6,8 +6,14 @@
 
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
+const identite = document.getElementById("identite");
+
 
 // OUVRIR ET FERMER LE MENU
+
+identite.addEventListener("click", function () {
+    nav.classList.toggle("active");
+});
 
 menuBtn.addEventListener("click", function () {
 
