@@ -6,18 +6,99 @@
     <title>Activite Scolaire</title>
     <link rel="stylesheet" href="Activite_Scolaire.css">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
 </head>
 <body>
-     <header>
-        <a href="index.html" class="Accueil">Accueil</a> > Niveau D'etude
+    <header class="header">
+        <div class="identite">
+            <img src="Images/logo.ico" class="logo" alt="Logo">
+            <div class="identite-texte">
+                <h1>Institut Saint-Edouard</h1>
+                <p>
+                    Archidiocèse de Kinshasa
+                </p>
+                    <p>
+                        <strong>ECOLE CONVENTIONNEE CATHOLIQUE</strong>
+                    </p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="menu-btn" id="menuBtn"
+                aria-expanded="false" aria-controls="nav">
+                <span class="menu-icon">☰</span> MENU
+            </button>
+
+            <nav class="nav" id="nav">
+                <a href="index.html">Accueil</a>
+                <a href="Niveau_D'etude.html">Niveau D'étude</a>
+                <a href="Activite_Scolaire.html">Activité Scolaire</a>
+                <a href="inscription.html">Inscription</a>
+                <a href="Enseignant.html">Enseignant</a>
+                <a href="Galerie.html">Galerie</a>
+                <a href="contact.html">Contact</a>
+                <a href="A_propos.html">À propos</a>
+
+            </nav>
+        </div>
     </header>
+
+     <div class="retour">
+        <a href="index.html" class="Accueil">Accueil</a> > Activite Scolaire
+    </div>
     <main>
-        <section>
+        <section class="intro">
             <h1>Activite Scolaire</h1>
             <p>Saint edouard n'est pas simplement la pour assurer une bonne formation, elle s'occupe a l'epanouissement des vos enfants et a leur amusement</p>
             <p>Nous disposons de plusieurs activite scolaire ou para scolaire que nous organisons au cours de chaque année scolaire</p>
         </section>
-        
+
+        <div class="activite">
+            <section>
+                <div>
+                <h2>Inter classe & scolaire Sportives</h2>
+                </div>
+                <p>
+                    Nous organisons des activités sportives pour encourager la santé physique et le travail d'équipe. 
+                    Les élèves peuvent participer à des tournois de football, de basketball, de volleyball et d'autres sports.
+                </p>
+                <img src="Images/sport.jpg" alt="Investiture" class="activite-image">
+            </section>
+
+            <section>
+                <div>
+                <h2>Journee Culturelles</h2>
+                </div>
+                <p>
+                    Nous proposons également des activités culturelles pour enrichir les connaissances et les compétences des élèves. 
+                    Cela inclut des ateliers d'art, des concerts, des spectacles théâtraux et des expositions. 
+                    comme celebrer le 8 mars, la fete de l'independance, la fete de la jeunesse et d'autres evenements culturels.
+                </p>
+                <img src="Images/35.jpg" alt="Investiture" class="activite-image">
+            </section>
+
+            <section>
+                <div>
+                <h2>Journee Investiture</h2>
+                </div>
+                <p>
+                    Nous organisons des cérémonies d'investiture pour célébrer les réalisations académiques et personnelles des élèves. 
+                    Ces événements permettent de reconnaître les efforts et les succès des étudiants dans divers domaines.
+                </p>
+                <img src="Images/hum_2.jpg" alt="Investiture" class="activite-image">
+            </section>
+
+            <section>
+                <div>
+                <h2>Sortie Scolaire</h2>
+                </div>
+                <p>
+                    Nous organisons des sorties scolaires pour enrichir l'expérience éducative des élèves et les encourager à explorer leur environnement. 
+                    Ces activités permettent aux élèves de mettre en pratique ce qu'ils ont appris en classe dans un cadre plus large et interactif.
+                </p>
+                <img src="Images/sortie.jpg" alt="Investiture" class="activite-image">
+            </section>
+        </sectionc>    
     </main>
     <footer class="footer">
 

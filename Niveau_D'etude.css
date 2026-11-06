@@ -147,6 +147,8 @@ body {
     text-align: center;
     font-weight: bold;
     backdrop-filter: none;
+     top: 0;
+    position: sticky;
 }
 
 .Accueil {
@@ -296,7 +298,7 @@ abbr {
 /* --------------------------------------------------------------------------
    1. PETITS SMARTPHONES (iPhone SE, Android compacts - jusqu'à 480px)
    -------------------------------------------------------------------------- */
-@media screen and max-width: 480px {
+@media screen and (max-width: 480px) {
     /* Ajustement de l'en-tête pour petits écrans */
     .header {
         flex-direction: column; /* Empile le logo et le menu verticalement */
@@ -336,7 +338,7 @@ abbr {
 /* --------------------------------------------------------------------------
    2. SMARTPHONES STANDARDS ET GRANDS (iPhone 12/13/14/15, Galaxy S series - 481px à 768px)
    -------------------------------------------------------------------------- */
-@media screen and min-width: 481px and max-width: 768px {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     /* Affichage du bouton de menu mobile s'il est configuré en JS */
     .menu-btn {
         display: block; /* Affiche le bouton menu burger sur smartphone */
@@ -368,7 +370,7 @@ abbr {
 /* --------------------------------------------------------------------------
    3. TABLETTES (iPad, Galaxy Tab - 769px à 1024px)
    -------------------------------------------------------------------------- */
-@media screen and min-width: 769px and max-width: 1024px {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .header {
         padding: 10px 2%; /* Réduit légèrement les marges extérieures */
     }
@@ -394,7 +396,7 @@ abbr {
 /* --------------------------------------------------------------------------
    4. ÉCRANS PC ET GRANDS MONITEURS (À partir de 1025px)
    -------------------------------------------------------------------------- */
-@media screen and min-width: 1025px {
+@media screen and (min-width: 1025px) {
     /* Sur grand écran, la galerie bascule automatiquement sur 4 colonnes */
     .Catalogue {
         grid-template-columns: repeat(4, 1fr);
